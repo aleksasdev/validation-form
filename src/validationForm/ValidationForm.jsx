@@ -1,44 +1,38 @@
 import React from 'react'
 import { useState } from 'react';
-import { useEffect } from 'react';
-import { createValues } from './createValues';
-import { createInputs } from './createInputs';
 import './index.css';
 import { onSubmit } from './onSubmit';
+import { createRef } from 'react';
+import { createContext } from 'react';
 
-export const ValidationForm = (props) => {
+export const ValidationFormContext = createContext();
 
-   const [values, setValues] = useState(null);
-   const [inputs, setInputs] = useState(null);
+export const ValidationForm = ({ onCompleted, label, ...props }) => {
+
+   const inputs = createRef([]);
+   inputs.current = [];
+
    const [error, setError] = useState(null);
 
    const formObject = {
-      children: [props.children],
-      values: values,
-      setValues: setValues,
-      inputs: inputs,
-      setInputs: setInputs,
+      inputs,
+      onCompleted,
       error: error,
       setError: setError,
-      submitState: props.submitState
    }
 
-   useEffect(()=>{
-      createInputs(formObject);
-   }, [values])
-
-   useEffect(()=>{
-      createValues(formObject);
-   }, [])
-
    return (
-      <form className="validation-form" onSubmit={e=> onSubmit(e, formObject)}>
-         {inputs}
-         <input type="submit" value={props.label} />
+      <ValidationFormContext.Provider value={{
+         formObject
+      }}>
+         <form className="validation-form" onSubmit={e=> onSubmit(e, formObject)}>
+            {[props.children].map(child => child)}
+            <input type="submit" value={label} />
 
-         <div className="error-widget" style={{visibility: error ? "visible" : "hidden"}}>
-            <p>{error}</p>
-         </div>
-      </form>
+            <div className="error-widget" style={{visibility: error ? "visible" : "hidden"}}>
+               <p>{error}</p>
+            </div>
+         </form>
+      </ValidationFormContext.Provider>
    )
 }
