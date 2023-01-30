@@ -10,17 +10,23 @@ Inside put children such as
 and if you want to create a validation input, use this component:
 
 ```
-<ValidationForm>
-   <ValidInput />
-</ValidationForm>
+<ValidInput />
  ```
 
 In
 ```
-<ValidInput>
+<ValidationForm>
 ```
-component you have to provide name attribute and requirements attribute.
-
+component you have to provide 
+```
+name
+```
+attribute and 
+ ```
+ requirements
+ ```
+attribute.
+ 
 This would be an example:
 ```
    <ValidationForm>
