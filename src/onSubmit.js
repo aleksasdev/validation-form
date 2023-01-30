@@ -1,5 +1,3 @@
-
-import { isInputValid } from './helper';
 import { isError } from './requirements';
 
 export function onSubmit(e, formObject){
