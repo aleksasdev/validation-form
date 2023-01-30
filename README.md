@@ -12,21 +12,13 @@ and if you want to create a validation input, use this component:
 ```
 <ValidInput />
  ```
-
-In
-```
-<ValidationForm>
-```
-component you have to provide 
+You have to provide these attributes:
 ```
 name
 ```
-attribute and 
  ```
  requirements
  ```
-attribute.
- 
 This would be an example:
 ```
    <ValidationForm>
