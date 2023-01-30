@@ -13,7 +13,7 @@ export const ValidationForm = (props) => {
    const [error, setError] = useState(null);
 
    const formObject = {
-      children: props.children,
+      children: [props.children],
       values: values,
       setValues: setValues,
       inputs: inputs,

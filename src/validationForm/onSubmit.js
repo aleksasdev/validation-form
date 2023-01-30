@@ -6,8 +6,8 @@ import { isError } from './requirements';
 export function onSubmit(e, formObject){
    e.preventDefault();
 
-   if(!formObject.submitState){
-      formObject.setError("You're missing 'submitState' attribute");
+   if(!formObject.onSubmit){
+      formObject.setError("You're missing 'onSubmit' attribute, provide a callback");
       return;
    }
 

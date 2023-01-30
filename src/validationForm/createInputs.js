@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { isInputValid } from './helper';
 import { onChange } from './onChange';
 
@@ -10,8 +11,9 @@ export const createInputs = (formObject) =>{
 
       let parsedInput = (
          <input 
-         requirements={child.props.requirements}
-         name={child.props.name}
+         key={nanoid()}
+         requirements={child?.props?.requirements}
+         name={child?.props?.name}
          value={formObject.values[index].value}
          onChange={e=> onChange(e, formObject)}
          />
