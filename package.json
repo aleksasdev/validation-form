@@ -24,20 +24,13 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "description": "A better version of vanilla html <form> that allows you to validate what's being input in real time with easy syntax.",
-  "main": "package/main.js",
+  "main": "./package/ValidationForm.jsx",
   "devDependencies": {},
   "repository": {
     "type": "git",
@@ -47,6 +40,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aleksasdev/validation-form/issues"
-  },
-  "homepage": "https://github.com/aleksasdev/validation-form#readme"
+  }
 }
