@@ -36,11 +36,9 @@ export const ValidationForm = (props) => {
          {inputs}
          <input type="submit" value={props.label} />
 
-         {error &&
-            <div className="error-widget">
-               <p>{error}</p>
-            </div>
-         }
+         <div className="error-widget" style={{visibility: error ? "visible" : "hidden"}}>
+            <p>{error}</p>
+         </div>
       </form>
    )
 }
