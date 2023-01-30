@@ -27,7 +27,7 @@ export function isError(setError, currentValue, requirements){
 export function doesMeetRequirement(requirement, currentValue){
 
    if(requirement === MINIMUM_LENGTH_8){
-      if(currentValue.length < 8) return "Your input has to be 8 characters long";
+      if(currentValue.length < 8) return "Your text has to be 8 characters long";
    }
 
    else if(requirement === MINIMUM_AGE_13){
