@@ -27,5 +27,5 @@ export function onSubmit(e, formObject){
       inputValues.push(currentValue);
    }
 
-   formObject.onCompleted(inputValues);
+   onCompleted(inputValues);
 }
