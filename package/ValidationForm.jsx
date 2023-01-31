@@ -12,7 +12,7 @@ export const ValidationForm = ({ onCompleted, label, ...props }) => {
    const inputs = createRef([]);
    inputs.current = [];
 
-   const [error, setError] = useState(null);
+   const [error, setError] = useState("_");
 
    const formObject = {
       inputs,
@@ -26,12 +26,13 @@ export const ValidationForm = ({ onCompleted, label, ...props }) => {
          formObject
       }}>
          <form className="validation-form" onSubmit={e=> onSubmit(e, formObject)}>
-            {[props.children].map(child => child)}
-            <input type="submit" value={label} />
 
-            <div className="error-widget" style={{visibility: error ? "visible" : "hidden"}}>
+            <div className="error-widget" style={{visibility: error !== "_" ? "visible" : "hidden"}}>
                <p>{error}</p>
             </div>
+
+            {[props.children].map(child => child)}
+            <input type="submit" value={label} />
          </form>
       </ValidationFormContext.Provider>
    )

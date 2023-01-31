@@ -19,7 +19,7 @@ export function onSubmit(e, formObject){
       if(currentValue === undefined) continue;
 
       if(isError(setError, currentValue, requirements)){
-         setError(current => current + "; " + "input name: " + input?.name)
+         setError(current => "You have a problem with input: " + input?.name)
          return;
       }
       inputValues.push(currentValue);

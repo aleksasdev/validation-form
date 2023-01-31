@@ -9,7 +9,7 @@ function App() {
    return (
       <ValidationForm onCompleted={handleCompletion} >
          <div>
-            <ValidInput requirements={[MINIMUM_LENGTH_8]} />
+            <ValidInput name="username" requirements={[MINIMUM_LENGTH_8]} />
             <ValidInput requirements={[MINIMUM_LENGTH_8]} />
          </div>
       </ValidationForm>

@@ -14,7 +14,9 @@ export const ValidInput = ({ name, requirements }) => {
 
       const currentValue = e.target.value;
 
-      if(!isError(setError, currentValue, requirements)) setError(null);
+      if(!isError(setError, currentValue, requirements)) setError("_");
+      if(!currentValue) setError("_");
+
       setValue(currentValue);
    }
 

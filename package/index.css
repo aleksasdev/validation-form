@@ -42,7 +42,7 @@
 }
 
 .validation-form .error-widget{
-   margin-top: 2rem;
+   margin-bottom: 2rem;
    background-color: var(--color-primary-tint);
    padding: 1rem;
    border-radius: 5px;
