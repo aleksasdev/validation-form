@@ -7,7 +7,7 @@ import { createContext } from 'react';
 
 export const ValidationFormContext = createContext();
 
-export const ValidationForm = ({ onCompleted, label, ...props }) => {
+export const ValidationForm = ({ onCompleted, label, className, ...props }) => {
 
    const inputs = createRef([]);
    inputs.current = [];
@@ -25,7 +25,7 @@ export const ValidationForm = ({ onCompleted, label, ...props }) => {
       <ValidationFormContext.Provider value={{
          formObject
       }}>
-         <form className="validation-form" onSubmit={e=> onSubmit(e, formObject)}>
+         <form className={className ? `${className} validation-form` : "validation-form"} onSubmit={e=> onSubmit(e, formObject)}>
 
             <div className="error-widget" style={{visibility: error !== "_" ? "visible" : "hidden"}}>
                <p>{error}</p>
