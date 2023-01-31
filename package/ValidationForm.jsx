@@ -36,3 +36,6 @@ export const ValidationForm = ({ onCompleted, label, ...props }) => {
       </ValidationFormContext.Provider>
    )
 }
+
+export * from './ValidInput';
+export * from './requirements';

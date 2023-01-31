@@ -1,10 +1,17 @@
-import { ValidationForm } from '@aleksasdev/validation-form';
+import { MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
 
 function App() {
 
+   const handleCompletion = (values) =>{
+      console.log(values);
+   }
+
    return (
-      <ValidationForm>
-         
+      <ValidationForm onCompleted={handleCompletion} >
+         <div>
+            <ValidInput requirements={[MINIMUM_LENGTH_8]} />
+            <ValidInput requirements={[MINIMUM_LENGTH_8]} />
+         </div>
       </ValidationForm>
    )
 }

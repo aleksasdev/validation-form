@@ -16,7 +16,7 @@ export function onSubmit(e, formObject){
       const currentValue = input?.value;
       const requirements = input?.getAttribute('requirements');
 
-      if(!requirements || currentValue === undefined) continue;
+      if(currentValue === undefined) continue;
 
       if(isError(setError, currentValue, requirements)){
          setError(current => current + "; " + "input name: " + input?.name)
