@@ -1,6 +1,6 @@
 {
   "name": "@aleksasdev/validation-form",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "vite": "^4.0.0"
   },
-  "description": "Create a: ```    <ValidationForm>    </ValidationForm> ``` Inside put children such as  ``` <p>, <label> ``` and if you want to create a validation input, use this component:",
+  "description": "A better form than vanilla <form> that allows you to do realtime validation with easy and comfortable syntax.",
   "main": "./package/ValidationForm.jsx",
   "repository": {
     "type": "git",
@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/aleksasdev/validation-form/issues"
   },
-  "homepage": "https://github.com/aleksasdev/validation-form#readme"
+  "homepage": "https://github.com/aleksasdev/validation-form#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
