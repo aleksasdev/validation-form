@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { isError } from './requirements';
 import { ValidationFormContext } from './ValidationForm';
 
-export const ValidInput = ({ name, requirements }) => {
+export const ValidInput = ({ name, requirements, type, required }) => {
 
    const [value, setValue] = useState("");
 
@@ -28,7 +28,8 @@ export const ValidInput = ({ name, requirements }) => {
 
    return (
       <input 
-         type="text"
+         type={type}
+         required={required}
          name={name}
          requirements={requirements} 
          value={value}
