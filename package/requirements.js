@@ -3,6 +3,7 @@ export const MINIMUM_AGE_13 = "age13";
 export const HAVE_EMAIL_SIGN = "@";
 export const HAVE_VALID_EMAIL = "email";
 export const HAVE_GMAIL_PREFIX = ".gmail";
+export const HAVE_VALID_URL = "url";
 
 export function isError(setError, currentValue, requirements){
    
@@ -44,6 +45,11 @@ export function doesMeetRequirement(requirement, currentValue){
 
    else if(requirement === HAVE_GMAIL_PREFIX){
       if(!currentValue.includes("gmail.com")) return "You have to use a gmail account";
+   }
+
+   else if(requirement === HAVE_VALID_URL){
+      if(!currentValue.includes("http")
+      || !currentValue.includes(".")) return "You need to use a valid url";
    }
 
    return true;
