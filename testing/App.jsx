@@ -1,18 +1,15 @@
-import { HAVE_VALID_URL, MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
-import { makeCustomError } from './../package/ValidationForm';
+import { HAVE_VALID_URL, MINIMUM_AGE_13, MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
 
 function App() {
 
    const handleCompletion = (values) =>{
       console.log(values);
-      makeCustomError("LOL");
    }
 
    return (
       <ValidationForm onCompleted={handleCompletion} >
          <div>
-            <ValidInput name="username" requirements={[MINIMUM_LENGTH_8]} />
-            <ValidInput requirements={[MINIMUM_LENGTH_8, HAVE_VALID_URL]} />
+            <ValidInput name="username" requirements={[MINIMUM_AGE_13]} />
          </div>
       </ValidationForm>
    )

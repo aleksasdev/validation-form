@@ -32,7 +32,8 @@ export function doesMeetRequirement(requirement, currentValue){
    }
 
    else if(requirement === MINIMUM_AGE_13){
-      if(!currentValue || parseInt(currentValue) < 13) return "You can't use this site if you aren't at least 13 years old";
+      if(!currentValue || parseInt(currentValue) < 13
+      || !Number(currentValue)) return "You can't use this site if you aren't at least 13 years old";
    }
 
    else if(requirement === HAVE_EMAIL_SIGN){
