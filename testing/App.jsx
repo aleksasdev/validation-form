@@ -9,7 +9,7 @@ function App() {
    return (
       <ValidationForm onCompleted={handleCompletion} >
          <div>
-            <ValidInput name="username" requirements={[HAVE_VALID_EMAIL]} />
+            <ValidInput name="username" requirements={[MINIMUM_AGE_13]} />
          </div>
       </ValidationForm>
    )

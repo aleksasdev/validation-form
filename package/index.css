@@ -48,4 +48,12 @@
    padding: 1rem;
    border-radius: 5px;
    border: 2px dashed rgb(185, 179, 179);
+   text-align: center;
+   font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+   .validation-form .error-widget{
+      font-size: 1.1rem;
+   }
 }
