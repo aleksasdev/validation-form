@@ -6,6 +6,7 @@ import { createRef } from 'react';
 import { createContext } from 'react';
 
 export const ValidationFormContext = createContext();
+var setErrorState;
 
 export const ValidationForm = ({ onCompleted, label, className, ...props }) => {
 
@@ -13,6 +14,8 @@ export const ValidationForm = ({ onCompleted, label, className, ...props }) => {
    inputs.current = [];
 
    const [error, setError] = useState("_");
+
+   if(!setErrorState) setErrorState = setError;
 
    const formObject = {
       inputs,
@@ -36,6 +39,16 @@ export const ValidationForm = ({ onCompleted, label, className, ...props }) => {
          </form>
       </ValidationFormContext.Provider>
    )
+}
+
+export function makeCustomError(errorMessage){
+   console.log("Setting custom error");
+   setErrorState(errorMessage);
+}
+
+export function clearCustomError(){
+   console.log("Clearing custom error");
+   setErrorState("_");
 }
 
 export * from './ValidInput';

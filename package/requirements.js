@@ -48,7 +48,7 @@ export function doesMeetRequirement(requirement, currentValue){
    }
 
    else if(requirement === HAVE_VALID_URL){
-      if(!currentValue.includes("http")
+      if( (!currentValue.includes("http") && !currentValue.includes("www"))
       || !currentValue.includes(".")) return "You need to use a valid url";
    }
 

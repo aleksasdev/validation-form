@@ -1,9 +1,11 @@
 import { HAVE_VALID_URL, MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
+import { makeCustomError } from './../package/ValidationForm';
 
 function App() {
 
    const handleCompletion = (values) =>{
       console.log(values);
+      makeCustomError("LOL");
    }
 
    return (
