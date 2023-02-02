@@ -26,13 +26,12 @@ export const ValidationForm = ({ onCompleted, label, className, ...props }) => {
          formObject
       }}>
          <form className={className ? `${className} validation-form` : "validation-form"} onSubmit={e=> onSubmit(e, formObject)}>
+            {[props.children].map(child => child)}
+            <input type="submit" value={label} />
 
             <div className="error-widget" style={{visibility: error !== "_" ? "visible" : "hidden"}}>
                <p>{error}</p>
             </div>
-
-            {[props.children].map(child => child)}
-            <input type="submit" value={label} />
          </form>
       </ValidationFormContext.Provider>
    )
