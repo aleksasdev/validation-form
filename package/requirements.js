@@ -41,7 +41,7 @@ export function doesMeetRequirement(requirement, currentValue){
    }
 
    else if(requirement === HAVE_VALID_EMAIL){
-      if(!currentValue.includes("@") || !currentValue.includes(".com")) return "You have to use a valid email address";
+      if(!currentValue.includes("@") || !currentValue.includes(".")) return "You have to use a valid email address";
    }
 
    else if(requirement === HAVE_GMAIL_PREFIX){

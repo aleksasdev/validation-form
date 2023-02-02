@@ -1,4 +1,4 @@
-import { HAVE_VALID_URL, MINIMUM_AGE_13, MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
+import { HAVE_VALID_EMAIL, HAVE_VALID_URL, MINIMUM_AGE_13, MINIMUM_LENGTH_8, ValidationForm, ValidInput } from '@aleksasdev/validation-form';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
    return (
       <ValidationForm onCompleted={handleCompletion} >
          <div>
-            <ValidInput name="username" requirements={[MINIMUM_AGE_13]} />
+            <ValidInput name="username" requirements={[HAVE_VALID_EMAIL]} />
          </div>
       </ValidationForm>
    )
