@@ -6,6 +6,8 @@
 
    --color-button: #5865f2;
    --color-button-shade: #4752c4;
+
+   --color-delete: #d83c3e;
 }
 
 .validation-form *{
@@ -44,13 +46,14 @@
 
 .validation-form .error-widget{
    margin-bottom: 2rem;
-   background-color: var(--color-secondary);
-   padding: 1rem;
+   padding: 0.5rem;
+   background-color: var(--color-primary-tint);
    border-radius: 5px;
-   border: 2px dashed rgb(185, 179, 179);
    text-align: center;
    font-size: 0.9rem;
    margin-top: 0.9rem;
+   max-width: 17rem;
+   border: 2px solid var(--color-delete);
 }
 
 @media (min-width: 700px) {
